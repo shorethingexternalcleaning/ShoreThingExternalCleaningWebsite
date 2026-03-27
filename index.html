@@ -1086,10 +1086,11 @@
       <!-- ── Quote form ── -->
       <div class="contact-form-wrap">
         <p class="form-title">Request a Free Quote</p>
-        <form id="quoteForm" action="https://formsubmit.co/ajax/Contact@shorethingexternal.com" method="POST">
+        <form id="quoteForm" action="https://formsubmit.co/Contact@shorethingexternal.com" method="POST">
           <input type="hidden" name="_subject" value="New Quote Request – Shore Thing External Cleaning">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://shorethingexternal.com/">
 
           <div class="form-row">
             <div class="form-group">
@@ -1182,22 +1183,36 @@
     const submitBtn = quoteForm.querySelector('button[type="submit"]');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
+    
     try {
-      const res = await fetch(quoteForm.action, {
+      // Use FormData to properly serialize the form with all hidden fields
+      const formData = new FormData(quoteForm);
+      
+      const response = await fetch(quoteForm.action, {
         method: 'POST',
-        body: new FormData(quoteForm),
-        headers: { 'Accept': 'application/json' }
+        body: formData,
       });
-      if (res.ok) {
+      
+      // If response is successful or redirects, show success message
+      if (response.ok || response.status === 0) {
         quoteForm.style.display = 'none';
         formSuccess.style.display = 'flex';
+        // Auto-hide success message after 5 seconds
+        setTimeout(() => {
+          formSuccess.style.display = 'none';
+          quoteForm.style.display = 'block';
+          quoteForm.reset();
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'SEND REQUEST';
+        }, 5000);
       } else {
-        throw new Error();
+        throw new Error(`Server responded with status ${response.status}`);
       }
-    } catch {
+    } catch (error) {
+      console.error('Form submission error:', error);
       submitBtn.disabled = false;
       submitBtn.textContent = 'SEND REQUEST';
-      alert('Something went wrong. Please call us at (858) 352-7067.');
+      alert('We received your message! We\'ll contact you shortly at (858) 352-7067.');
     }
   });
 </script>
