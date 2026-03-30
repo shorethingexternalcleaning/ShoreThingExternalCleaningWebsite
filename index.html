@@ -352,6 +352,7 @@
     .h-anim-3 { animation: heroUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s both; }
     .h-anim-4 { animation: heroUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.52s both; }
     .h-anim-5 { animation: heroUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.68s both; }
+    .h-anim-6 { animation: heroUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.82s both; }
     @keyframes heroUp {
       from { opacity: 0; transform: translateY(30px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -1144,9 +1145,95 @@
       letter-spacing: 0.02em;
     }
     .form-success-msg { font-size: 0.88rem; color: rgba(255,255,255,0.52); line-height: 1.7; }
+
+    /* ── HERO TRUST BAR ── */
+    .hero-trust-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .trust-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(59,184,232,0.2);
+      border-radius: 40px;
+      padding: 7px 14px 7px 10px;
+      text-decoration: none;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+    .trust-pill:hover {
+      background: rgba(59,184,232,0.09);
+      border-color: rgba(59,184,232,0.42);
+      transform: translateY(-2px);
+    }
+    .trust-pill-icon { width: 20px; height: 20px; flex-shrink: 0; }
+    .trust-pill-stars { color: #FFD43B; font-size: 0.72rem; letter-spacing: 1.5px; line-height: 1; }
+    .trust-pill-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.75);
+      margin-top: 1px;
+    }
+
+    /* ── FLOATING CTA ── */
+    .floating-cta {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 400;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(16px);
+      transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .floating-cta.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .floating-cta a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #3BB8E8 0%, #1A8FC4 100%);
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 50px;
+      box-shadow: 0 8px 32px rgba(59,184,232,0.45), 0 3px 12px rgba(0,0,0,0.4);
+      transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s ease;
+    }
+    .floating-cta a:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 14px 44px rgba(59,184,232,0.58), 0 4px 16px rgba(0,0,0,0.45);
+    }
+    @media (max-width: 480px) {
+      .floating-cta { bottom: 18px; right: 16px; }
+      .floating-cta a { font-size: 0.82rem; padding: 12px 18px; }
+    }
   </style>
 </head>
 <body>
+
+<!-- ═══════════════════════════════════ FLOATING CTA ════════════════════════ -->
+<div class="floating-cta" id="floatingCta">
+  <a href="#contact">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+    </svg>
+    Get a Free Quote
+  </a>
+</div>
 
 <!-- ═══════════════════════════════════ NAV ═══════════════════════════════════ -->
 <nav id="mainNav">
@@ -1203,7 +1290,47 @@
         <a href="#contact" class="btn-primary">Get a Free Quote</a>
         <a href="#services" class="btn-ghost">Our Services</a>
       </div>
-      <div class="hero-stats h-anim-5">
+
+      <!-- Reputation trust bar — visible on page load -->
+      <div class="hero-trust-bar h-anim-5">
+        <!-- Google -->
+        <a href="https://www.google.com/search?q=Shore+Thing+External+Cleaning+San+Diego" target="_blank" rel="noopener" class="trust-pill">
+          <svg class="trust-pill-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#4285F4" d="M45.5 24.5c0-1.5-.1-3-.4-4.5H24v8.5h12.1c-.5 2.8-2.1 5.1-4.4 6.7v5.5h7.1c4.2-3.9 6.7-9.6 6.7-16.2z"/>
+            <path fill="#34A853" d="M24 46c6.1 0 11.2-2 14.9-5.5l-7.1-5.5c-2 1.3-4.5 2.1-7.8 2.1-6 0-11-4-12.8-9.5H4v5.7C7.7 41.5 15.3 46 24 46z"/>
+            <path fill="#FBBC05" d="M11.2 27.6A13.6 13.6 0 0110.5 24c0-1.2.2-2.4.5-3.5V14.7H4A22 22 0 002 24c0 3.6.9 7 2.4 9.9l7.2-5.7-.4-.6z"/>
+            <path fill="#EA4335" d="M24 10.5c3.4 0 6.4 1.2 8.8 3.4l6.5-6.5C35.2 3.7 30.1 2 24 2 15.3 2 7.7 6.5 4 13.7l7.2 5.7C13 14.5 18 10.5 24 10.5z"/>
+          </svg>
+          <div>
+            <div class="trust-pill-stars">★★★★★</div>
+            <div class="trust-pill-name">Google</div>
+          </div>
+        </a>
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/people/Shore-Thing-External-Cleaning-SD/61587908588510/" target="_blank" rel="noopener" class="trust-pill">
+          <svg class="trust-pill-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="24" fill="#1877F2"/>
+            <path fill="#fff" d="M32 24h-5v16h-6V24h-3v-5h3v-3c0-4 2-6 6-6h4v5h-3c-1 0-1 .5-1 1v3h4l-1 5z"/>
+          </svg>
+          <div>
+            <div class="trust-pill-stars">★★★★★</div>
+            <div class="trust-pill-name">Facebook</div>
+          </div>
+        </a>
+        <!-- Yelp -->
+        <a href="https://www.yelp.com/biz/shore-thing-external-cleaning-san-diego?osq=Shore+Thing+External+Cleaning" target="_blank" rel="noopener" class="trust-pill">
+          <svg class="trust-pill-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="24" fill="#D32323"/>
+            <text x="24" y="32" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="900" fill="#fff">y</text>
+          </svg>
+          <div>
+            <div class="trust-pill-stars">★★★★★</div>
+            <div class="trust-pill-name">Yelp</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="hero-stats h-anim-6">
         <div>
           <div class="stat-num" data-count="100" data-suffix="+">100+</div>
           <div class="stat-lbl">Jobs Completed</div>
@@ -1516,7 +1643,7 @@
       <span class="eyebrow">Our Reputation</span>
       <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;letter-spacing:0.06em;margin:0 0 6px;">100% FIVE-STAR RATED</h2>
       <div class="accent-bar-center"></div>
-      <p style="color:var(--muted);font-size:0.95rem;margin:20px auto 0;max-width:480px;line-height:1.65;">Every single review we've earned on Facebook and Google is five stars — and we plan to keep it that way.</p>
+      <p style="color:var(--muted);font-size:0.95rem;margin:20px auto 0;max-width:520px;line-height:1.65;">Every single review we've earned on Google, Facebook, and Yelp is five stars — and we plan to keep it that way.</p>
     </div>
 
     <div class="ratings-row" data-reveal>
@@ -1543,6 +1670,18 @@
         <div class="rating-badge-text">
           <div class="rating-badge-stars">★★★★★</div>
           <div class="rating-badge-platform">Facebook</div>
+          <div class="rating-badge-sub">100% Five Stars</div>
+        </div>
+      </a>
+      <!-- Yelp -->
+      <a href="https://www.yelp.com/biz/shore-thing-external-cleaning-san-diego?osq=Shore+Thing+External+Cleaning" target="_blank" rel="noopener" class="rating-badge">
+        <svg class="rating-badge-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="24" fill="#D32323"/>
+          <text x="24" y="33" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" font-weight="900" fill="#fff">y</text>
+        </svg>
+        <div class="rating-badge-text">
+          <div class="rating-badge-stars">★★★★★</div>
+          <div class="rating-badge-platform">Yelp</div>
           <div class="rating-badge-sub">100% Five Stars</div>
         </div>
       </a>
@@ -1605,10 +1744,18 @@
     btn.setAttribute('aria-expanded', 'false');
   }));
 
-  // ── Nav scroll effect ──
-  const nav = document.getElementById('mainNav');
+  // ── Nav scroll effect + floating CTA ──
+  const nav         = document.getElementById('mainNav');
+  const floatingCta = document.getElementById('floatingCta');
+  const heroEl      = document.getElementById('home');
+  const contactEl   = document.getElementById('contact');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
+    const heroBottom    = heroEl    ? heroEl.getBoundingClientRect().bottom    : 0;
+    const contactBottom = contactEl ? contactEl.getBoundingClientRect().bottom : 9999;
+    const pastHero      = heroBottom < 0;
+    const pastContact   = contactBottom < 120;
+    floatingCta.classList.toggle('visible', pastHero && !pastContact);
   }, { passive: true });
 
   // ── Scroll reveal ──
