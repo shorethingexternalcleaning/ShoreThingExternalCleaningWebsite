@@ -1399,6 +1399,86 @@
       color: rgba(59,184,232,0.45);
       line-height: 1.8;
     }
+
+    /* ── Referral Section ── */
+    .section-referral {
+      padding: 96px 28px;
+      background: linear-gradient(180deg, #0C1824 0%, #080F18 100%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .section-referral::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(59,184,232,0.07), transparent);
+      pointer-events: none;
+    }
+    .referral-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .referral-cards {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 44px 0 40px;
+    }
+    .referral-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(59,184,232,0.22);
+      border-radius: 16px;
+      padding: 36px 32px;
+      flex: 1 1 240px;
+      max-width: 340px;
+    }
+    .referral-card-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+    .referral-card-pct {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--electric);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .referral-card-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--electric-lt);
+      margin-bottom: 12px;
+    }
+    .referral-card-desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .referral-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--electric);
+      letter-spacing: 0.08em;
+      align-self: center;
+    }
+    .referral-fine {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+      margin-top: 0;
+    }
   </style>
 </head>
 <body>
@@ -2032,6 +2112,41 @@
       <p>Shore Thing External Cleaning is a San Diego-based exterior cleaning company serving homeowners and businesses across San Diego County. Our services include pressure washing, soft washing, solar panel cleaning, window and screen cleaning, and gutter cleaning. We serve all of San Diego's top neighborhoods including La Jolla, Rancho Santa Fe, Coronado, Del Mar, Carmel Valley, Carlsbad, Encinitas, Scripps Ranch, 4S Ranch, and dozens more communities throughout North County, South Bay, and East County San Diego.</p>
       <p>Licensed and insured. Locally owned and operated.</p>
       <p class="areas-seo-keywords">San Diego pressure washing &nbsp;|&nbsp; San Diego solar panel cleaning &nbsp;|&nbsp; San Diego window cleaning &nbsp;|&nbsp; San Diego gutter cleaning &nbsp;|&nbsp; exterior cleaning San Diego &nbsp;|&nbsp; house washing San Diego &nbsp;|&nbsp; soft washing San Diego &nbsp;|&nbsp; San Diego exterior cleaning company</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ REFERRAL ════════════════════════════ -->
+<section class="section-referral" id="referral">
+  <div class="referral-inner">
+    <div data-reveal>
+      <span class="eyebrow">Refer a Friend &amp; Save</span>
+      <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;letter-spacing:0.06em;margin:0 0 6px;">LOVE YOUR RESULTS? SHARE THE LOVE!</h2>
+      <div class="accent-bar-center"></div>
+      <p style="color:var(--muted);font-size:0.95rem;margin:20px auto 0;max-width:560px;line-height:1.65;">When you refer a friend who books with us, you both win — it's that simple.</p>
+    </div>
+
+    <div class="referral-cards" data-reveal>
+      <div class="referral-card">
+        <div class="referral-card-icon">🏠</div>
+        <div class="referral-card-pct">10% OFF</div>
+        <div class="referral-card-label">Your Next Service</div>
+        <div class="referral-card-desc">You refer a friend who books with us and you receive 10% off your next cleaning service.</div>
+      </div>
+
+      <div class="referral-divider">+</div>
+
+      <div class="referral-card">
+        <div class="referral-card-icon">🤝</div>
+        <div class="referral-card-pct">10% OFF</div>
+        <div class="referral-card-label">Their First Booking</div>
+        <div class="referral-card-desc">Your friend gets 10% off their very first booking with Shore Thing External Cleaning.</div>
+      </div>
+    </div>
+
+    <div data-reveal>
+      <a href="#contact" class="btn-primary" style="display:inline-block;margin-bottom:20px;">Get a Free Quote</a>
+      <p class="referral-fine">Mention your referral when booking. Discount applied to qualifying services. Not combinable with other offers.</p>
     </div>
   </div>
 </section>
