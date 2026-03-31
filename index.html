@@ -1255,6 +1255,112 @@
       .floating-cta { bottom: 18px; right: 16px; }
       .floating-cta a { font-size: 0.82rem; padding: 12px 18px; }
     }
+
+    /* ── SERVICE AREAS ── */
+    .section-areas {
+      padding: 104px 28px 80px;
+      background: linear-gradient(180deg, #080F18 0%, #0C1824 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .section-areas::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(59,184,232,0.04) 1px, transparent 1px);
+      background-size: 38px 38px;
+      pointer-events: none;
+    }
+    .areas-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .areas-intro {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.62);
+      max-width: 820px;
+      margin: 24px 0 56px;
+    }
+    .areas-tier {
+      margin-bottom: 56px;
+    }
+    .areas-tier-head {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--electric-lt);
+      margin: 0 0 8px;
+    }
+    .areas-tier-sub {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      max-width: 780px;
+      margin: 0 0 28px;
+    }
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 14px;
+    }
+    .area-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(59,184,232,0.1);
+      border-radius: 10px;
+      padding: 20px 20px 16px;
+      transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+    }
+    .area-card:hover {
+      border-color: rgba(59,184,232,0.28);
+      background: rgba(59,184,232,0.03);
+      transform: translateY(-3px);
+    }
+    .area-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #fff;
+      margin: 0 0 6px;
+    }
+    .area-zip {
+      font-size: 0.7rem;
+      color: var(--electric);
+      letter-spacing: 0.12em;
+      opacity: 0.75;
+      margin-bottom: 10px;
+    }
+    .area-services {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .area-desc {
+      font-size: 0.78rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.38);
+    }
+    .areas-seo-footer {
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(59,184,232,0.1);
+    }
+    .areas-seo-footer p {
+      font-size: 0.82rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.38);
+      margin: 0 0 12px;
+    }
+    .areas-seo-keywords {
+      font-size: 0.75rem;
+      color: rgba(59,184,232,0.45);
+      line-height: 1.8;
+    }
   </style>
 </head>
 <body>
@@ -1283,7 +1389,8 @@
       <a href="#services" class="nav-link">Services</a>
       <a href="#about"    class="nav-link">About</a>
       <a href="#gallery"  class="nav-link">Gallery</a>
-      <a href="#contact"  class="nav-link">Contact</a>
+      <a href="#contact"      class="nav-link">Contact</a>
+      <a href="#service-areas" class="nav-link">Service Areas</a>
       <a href="tel:8583527067" class="btn-primary" style="padding:10px 22px;font-size:0.82rem;">Call Now</a>
     </div>
     <button class="hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false">
@@ -1293,10 +1400,11 @@
     </button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#services" class="nav-link">Services</a>
-    <a href="#about"    class="nav-link">About</a>
-    <a href="#gallery"  class="nav-link">Gallery</a>
-    <a href="#contact"  class="nav-link">Contact</a>
+    <a href="#services"      class="nav-link">Services</a>
+    <a href="#about"         class="nav-link">About</a>
+    <a href="#gallery"       class="nav-link">Gallery</a>
+    <a href="#contact"       class="nav-link">Contact</a>
+    <a href="#service-areas" class="nav-link">Service Areas</a>
     <a href="tel:8583527067" class="btn-primary">Call Now</a>
   </div>
 </nav>
@@ -1366,11 +1474,6 @@
 
       <div class="hero-stats h-anim-6">
         <div>
-          <div class="stat-num" data-count="100" data-suffix="+">100+</div>
-          <div class="stat-lbl">Jobs Completed</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div>
           <div class="stat-num">5★</div>
           <div class="stat-lbl">Rated Service</div>
         </div>
@@ -1410,7 +1513,7 @@
         </svg>
       </div>
       <h3 class="service-title" style="color:var(--electric-lt);">Pressure Washing</h3>
-      <p class="service-tags">Driveways &middot; Patios &middot; Fences &middot; Concrete &middot; Trash Bins</p>
+      <p class="service-tags">Driveways &middot; Patios &middot; Concrete &middot; Trash Bins</p>
       <ul class="service-bullets">
         <li>High-pressure water blasts away years of embedded dirt, oil stains, and grime from hard surfaces that nothing else can touch.</li>
         <li>Dirty driveways and patios drag down your curb appeal — a single pressure wash can make them look new again.</li>
@@ -1426,7 +1529,7 @@
         </svg>
       </div>
       <h3 class="service-title">Soft Washing</h3>
-      <p class="service-tags">House Siding &middot; Roofs &middot; Stucco &middot; Wood &middot; Painted Surfaces</p>
+      <p class="service-tags">House Siding &middot; Roofs &middot; Stucco &middot; Wood &middot; Fences &middot; Painted Surfaces</p>
       <ul class="service-bullets">
         <li>Low-pressure, biodegradable solution kills mold, mildew, and algae at the root — safe for paint, stucco, and delicate surfaces pressure washing would damage.</li>
         <li>San Diego's coastal humidity feeds biological growth year-round. Soft washing stops it before it spreads and causes permanent staining or rot.</li>
@@ -1444,7 +1547,7 @@
       <p class="service-tags">Residential &middot; Commercial &middot; All Panel Types</p>
       <ul class="service-bullets">
         <li>Dirty panels lose 15–30% of their energy output — regular cleaning pays for itself in recovered production.</li>
-        <li>San Diego's dry season means no rain to rinse panels naturally. Dust, pollen, and bird droppings accumulate fast.</li>
+        <li>We use a RO/DI water filtration system and water-fed pole to deliver pure, spot-free water — nothing is left behind when it dries.</li>
         <li>Bird droppings cause hot spots that permanently degrade cells. Cleaning prevents damage, not just dirt.</li>
       </ul>
     </div>
@@ -1460,8 +1563,8 @@
       <p class="service-tags">Exterior &middot; Screens &middot; Tracks</p>
       <ul class="service-bullets">
         <li>Hard water and salt air leave mineral deposits that etch into glass permanently — regular cleaning prevents irreversible damage.</li>
+        <li>We use a RO/DI water filter and water-fed pole system — purified water leaves zero minerals or residue on the glass when it evaporates, so you get a truly spot-free finish.</li>
         <li>Clean windows let in measurably more light, improving the feel of every room without changing anything inside.</li>
-        <li>Dirty screens trap allergens that blow directly into your home every time a window is open.</li>
       </ul>
     </div>
 
@@ -1625,8 +1728,8 @@
     <div class="contact-head" data-reveal>
       <span class="eyebrow">Get In Touch</span>
       <h2 class="contact-headline">
-        READY FOR A<br/>
-        <span>CLEANER EXTERIOR?</span>
+        YOUR HOME DESERVES<br/>
+        <span>TO LOOK ITS BEST.</span>
       </h2>
       <p class="contact-sub" style="margin-bottom:0;">
         Fill out the form for a free quote, or reach us directly — we respond quickly.
@@ -1795,6 +1898,252 @@
           TikTok
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ SERVICE AREAS ════════════════════════ -->
+<section class="section-areas" id="service-areas">
+  <div class="areas-inner">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Where We Work</span>
+      <h2>SAN DIEGO SERVICE AREAS</h2>
+      <div class="accent-bar-center"></div>
+    </div>
+
+    <p class="areas-intro">
+      Shore Thing External Cleaning serves homeowners and businesses throughout San Diego County. Whether you're in a coastal community dealing with salt air buildup, a newer inland neighborhood with solar panels that need regular maintenance, or an estate property with mature trees filling your gutters — we bring the right equipment and expertise to your door. Explore our full service area below.
+    </p>
+
+    <!-- TIER A -->
+    <div class="areas-tier" data-reveal>
+      <h2 class="areas-tier-head">Premium Service Areas — La Jolla, Rancho Santa Fe &amp; Coastal San Diego</h2>
+      <p class="areas-tier-sub">Shore Thing specializes in high-end exterior cleaning for San Diego's luxury neighborhoods. Our team understands the unique demands of estate properties, ocean-facing homes, and gated communities — from soft washing delicate stucco to cleaning large-format windows overlooking the Pacific.</p>
+      <div class="areas-grid">
+        <div class="area-card">
+          <div class="area-name">Rancho Santa Fe</div>
+          <div class="area-zip">92067</div>
+          <div class="area-services">Pressure Washing · Window Cleaning · Gutter Cleaning</div>
+          <div class="area-desc">Rancho Santa Fe's sprawling estate properties, equestrian lots, and mature landscaping create unique exterior cleaning demands. Shore Thing provides premium pressure washing for long driveways and hardscaping, window cleaning for large multi-pane homes, and gutter cleaning to manage debris from the area's heavy tree coverage.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">La Jolla Farms</div>
+          <div class="area-zip">92037</div>
+          <div class="area-services">Window Cleaning · Pressure Washing · Solar Panel Cleaning</div>
+          <div class="area-desc">La Jolla Farms homes perched above the ocean face constant salt air exposure that etches glass, stains stucco, and accelerates surface wear. Shore Thing's soft washing and professional window cleaning services protect your home's exterior and maximize natural light.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Del Mar (Olde Del Mar)</div>
+          <div class="area-zip">92014</div>
+          <div class="area-services">Window Cleaning · Pressure Washing</div>
+          <div class="area-desc">Olde Del Mar's proximity to the coast means salt residue accumulates on windows, driveways, and home exteriors faster than most San Diego neighborhoods. Shore Thing's pressure washing and window cleaning services keep Del Mar homes looking pristine year-round.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Coronado</div>
+          <div class="area-zip">92118</div>
+          <div class="area-services">Window Cleaning · Pressure Washing · Gutter Cleaning</div>
+          <div class="area-desc">Coronado's island location creates one of San Diego's most demanding environments for exterior surfaces. Salt air, humidity, and marine layer combine to accelerate mold, mildew, and mineral deposit buildup on windows, siding, and hardscaping.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Fairbanks Ranch</div>
+          <div class="area-zip">92067</div>
+          <div class="area-services">Pressure Washing · Window Cleaning · Gutter Cleaning</div>
+          <div class="area-desc">Fairbanks Ranch's gated estate community features large properties with mature trees, expansive driveways, and premium exteriors. Shore Thing's gutter cleaning services are especially in demand here due to heavy tree canopy, while our pressure washing keeps hardscape and facades in top condition.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">La Jolla Shores</div>
+          <div class="area-zip">92037</div>
+          <div class="area-services">Window Cleaning · Pressure Washing</div>
+          <div class="area-desc">La Jolla Shores homeowners deal with relentless coastal salt buildup on windows, siding, and outdoor surfaces. Shore Thing's window cleaning and soft washing services are tailored for coastal homes — protecting glass from mineral etching and surfaces from biological growth.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Muirlands</div>
+          <div class="area-zip">92037</div>
+          <div class="area-services">Window Cleaning · Pressure Washing · Solar Panel Cleaning</div>
+          <div class="area-desc">Muirlands' canyon-facing estates feature large windows, extensive hardscaping, and growing solar adoption. Shore Thing provides complete exterior cleaning — from solar panel maintenance to pressure washing and premium window service.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Santaluz</div>
+          <div class="area-zip">92127</div>
+          <div class="area-services">Pressure Washing · Solar Panel Cleaning · Window Cleaning</div>
+          <div class="area-desc">Santaluz is one of San Diego's premier HOA-managed communities. Newer construction throughout the neighborhood means high solar panel penetration and maintained community standards that require regular exterior upkeep.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">The Crosby at Rancho Santa Fe</div>
+          <div class="area-zip">92127</div>
+          <div class="area-services">Pressure Washing · Solar Panel Cleaning · Window Cleaning</div>
+          <div class="area-desc">The Crosby is a luxury golf and residential community with high standards for property appearance. Shore Thing provides pressure washing, solar panel cleaning, and window cleaning services to keep Crosby homes in immaculate condition.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Cielo (Rancho Santa Fe)</div>
+          <div class="area-zip">92067</div>
+          <div class="area-services">Pressure Washing · Window Cleaning · Solar Panel Cleaning</div>
+          <div class="area-desc">Cielo is one of San Diego County's most exclusive luxury communities. Shore Thing brings the same premium exterior cleaning service found in Rancho Santa Fe proper to Cielo's hilltop estate homes.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Del Mar Mesa</div>
+          <div class="area-zip">92130</div>
+          <div class="area-services">Pressure Washing · Solar Panel Cleaning · Gutter Cleaning</div>
+          <div class="area-desc">Del Mar Mesa's large newer homes feature high solar panel density and expansive outdoor living spaces that benefit from regular pressure washing and gutter maintenance.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Torrey Pines</div>
+          <div class="area-zip">92037</div>
+          <div class="area-services">Window Cleaning · Pressure Washing</div>
+          <div class="area-desc">Torrey Pines homes sit adjacent to one of San Diego's most iconic natural reserves. High-income homeowners here expect pristine exteriors — and Shore Thing's window cleaning and pressure washing deliver.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">La Playa</div>
+          <div class="area-zip">92106</div>
+          <div class="area-services">Window Cleaning · Pressure Washing</div>
+          <div class="area-desc">La Playa's bay-front location means salt air impacts windows and exterior surfaces more aggressively than most San Diego neighborhoods. Shore Thing's coastal cleaning expertise makes us the right choice for La Playa homeowners.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Olivenhain (Encinitas)</div>
+          <div class="area-zip">92024</div>
+          <div class="area-services">Gutter Cleaning · Pressure Washing · Window Cleaning</div>
+          <div class="area-desc">Olivenhain's horse properties and large rural lots in Encinitas create unique exterior cleaning needs — expansive hardscaping, mature trees, and large windows. Shore Thing brings estate-level service to Olivenhain.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Mission Hills</div>
+          <div class="area-zip">92103</div>
+          <div class="area-services">Gutter Cleaning · Window Cleaning · Pressure Washing</div>
+          <div class="area-desc">Mission Hills is one of San Diego's oldest and most established neighborhoods, with mature trees that make gutter cleaning a year-round necessity. Shore Thing serves Mission Hills homeowners with gutter maintenance, window cleaning, and exterior washing.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIER B -->
+    <div class="areas-tier" data-reveal>
+      <h2 class="areas-tier-head">Core Service Areas — Carmel Valley, Carlsbad, Scripps Ranch &amp; North County</h2>
+      <p class="areas-tier-sub">These neighborhoods represent Shore Thing's highest-volume service corridors — combining strong homeownership rates, high solar panel density, and HOA communities that require consistent exterior upkeep.</p>
+      <div class="areas-grid">
+        <div class="area-card">
+          <div class="area-name">Carmel Valley</div>
+          <div class="area-zip">92130</div>
+          <div class="area-services">Solar Panel Cleaning · Pressure Washing · Window Cleaning</div>
+          <div class="area-desc">One of Shore Thing's most active service areas. With dense HOA communities and near-universal solar adoption in newer builds, Carmel Valley homeowners invest in regular exterior maintenance.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Scripps Ranch</div>
+          <div class="area-zip">92131</div>
+          <div class="area-services">Solar Panel Cleaning · Gutter Cleaning · Pressure Washing</div>
+          <div class="area-desc">Scripps Ranch combines two of Shore Thing's highest-demand service drivers: one of San Diego's densest solar panel concentrations and a heavy eucalyptus tree canopy that fills gutters year-round.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">4S Ranch</div>
+          <div class="area-zip">92127</div>
+          <div class="area-services">Solar Panel Cleaning · Pressure Washing · Window Cleaning</div>
+          <div class="area-desc">4S Ranch was built during San Diego's solar boom — nearly every home in the neighborhood has rooftop panels that require regular cleaning to maintain efficiency.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Pacific Highlands Ranch</div>
+          <div class="area-zip">92130</div>
+          <div class="area-services">Solar Panel Cleaning · Pressure Washing · Window Cleaning</div>
+          <div class="area-desc">Among San Diego County's newest master-planned communities. Solar panels are standard on virtually every home, and HOA standards require clean, well-maintained exteriors.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Del Mar Heights</div>
+          <div class="area-zip">92130</div>
+          <div class="area-services">Window Cleaning · Solar Panel Cleaning · Pressure Washing</div>
+          <div class="area-desc">Del Mar Heights offers the wealth concentration of coastal Del Mar with the homeownership density of an inland suburb. Shore Thing provides window cleaning, solar panel maintenance, and pressure washing here.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Torrey Hills</div>
+          <div class="area-zip">92130</div>
+          <div class="area-services">Solar Panel Cleaning · Pressure Washing · Window Cleaning</div>
+          <div class="area-desc">Torrey Hills is a tight-knit executive neighborhood with newer homes, high solar density, and easy route access from Carmel Valley. Shore Thing serves Torrey Hills as part of our core North City service corridor.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Carlsbad Aviara</div>
+          <div class="area-zip">92011</div>
+          <div class="area-services">Pressure Washing · Solar Panel Cleaning · Window Cleaning</div>
+          <div class="area-desc">Carlsbad Aviara's large tile-roof homes, resort-adjacent setting, and affluent homeowners create demand for all Shore Thing services. Pressure washing for driveways, solar cleaning for rooftop systems, and window cleaning for expansive glass.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Encinitas (Coastal)</div>
+          <div class="area-zip">92024</div>
+          <div class="area-services">Window Cleaning · Pressure Washing · Gutter Cleaning</div>
+          <div class="area-desc">Coastal Encinitas homeowners face salt air challenges similar to La Jolla and Del Mar — accelerated mineral buildup on windows, mold growth on siding, and debris in gutters from coastal vegetation.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Solana Beach</div>
+          <div class="area-zip">92075</div>
+          <div class="area-services">Window Cleaning · Pressure Washing</div>
+          <div class="area-desc">Solana Beach's compact coastal community is tight-knit and referral-driven. Shore Thing's window cleaning and pressure washing services have earned strong repeat business from Solana Beach homeowners.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Cardiff-by-the-Sea</div>
+          <div class="area-zip">92007</div>
+          <div class="area-services">Pressure Washing · Window Cleaning · Solar Panel Cleaning</div>
+          <div class="area-desc">Cardiff-by-the-Sea homeowners are environmentally conscious and solar-forward — making solar panel cleaning a natural fit alongside window and pressure washing services.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Carmel Mountain Ranch</div>
+          <div class="area-zip">92128</div>
+          <div class="area-services">Solar Panel Cleaning · Pressure Washing · Gutter Cleaning</div>
+          <div class="area-desc">Carmel Mountain Ranch features high homeownership, aging solar systems that benefit most from regular cleaning, and tree coverage that keeps gutters busy.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">La Costa</div>
+          <div class="area-zip">92009</div>
+          <div class="area-services">Pressure Washing · Solar Panel Cleaning · Window Cleaning</div>
+          <div class="area-desc">La Costa's resort-adjacent, golf community atmosphere means homeowners take exterior appearance seriously. Shore Thing provides pressure washing, solar panel cleaning, and window service for La Costa's larger homes.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">North City / Sorrento Valley</div>
+          <div class="area-zip">92121</div>
+          <div class="area-services">Solar Panel Cleaning · Window Cleaning · Pressure Washing</div>
+          <div class="area-desc">The North City residential corridor — home to many of San Diego's tech and biotech professionals — features newer executive homes with high solar adoption.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">Rancho Pe&ntilde;asquitos</div>
+          <div class="area-zip">92129</div>
+          <div class="area-services">Solar Panel Cleaning · Gutter Cleaning · Pressure Washing</div>
+          <div class="area-desc">Rancho Peñasquitos has one of the highest homeownership rates in San Diego, a large inventory of aging solar systems due for regular maintenance, and significant tree coverage in older sections.</div>
+        </div>
+        <div class="area-card">
+          <div class="area-name">South Carlsbad</div>
+          <div class="area-zip">92011</div>
+          <div class="area-services">Solar Panel Cleaning · Pressure Washing · Window Cleaning</div>
+          <div class="area-desc">South Carlsbad's newer builds, coastal proximity, and growing family homeowner base make it a strong fit for Shore Thing's core services.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIER C -->
+    <div class="areas-tier" data-reveal>
+      <h2 class="areas-tier-head">Extended Service Areas — East County, South Bay &amp; Inland San Diego</h2>
+      <p class="areas-tier-sub">Shore Thing's service area extends throughout San Diego County. These neighborhoods offer strong homeownership rates, dense solar panel inventory, and consistent demand for recurring exterior cleaning services.</p>
+      <div class="areas-grid">
+        <div class="area-card"><div class="area-name">Eastlake (Chula Vista)</div><div class="area-zip">91914</div><div class="area-services">Solar Panel Cleaning · Pressure Washing · Window Cleaning</div></div>
+        <div class="area-card"><div class="area-name">Otay Ranch (Chula Vista)</div><div class="area-zip">91915</div><div class="area-services">Solar Panel Cleaning · Pressure Washing</div></div>
+        <div class="area-card"><div class="area-name">Rancho Bernardo</div><div class="area-zip">92128</div><div class="area-services">Solar Panel Cleaning · Gutter Cleaning · Pressure Washing</div></div>
+        <div class="area-card"><div class="area-name">Poway</div><div class="area-zip">92064</div><div class="area-services">Gutter Cleaning · Solar Panel Cleaning · Pressure Washing</div></div>
+        <div class="area-card"><div class="area-name">Harmony Grove Village</div><div class="area-zip">92029</div><div class="area-services">Solar Panel Cleaning · Pressure Washing · Window Cleaning</div></div>
+        <div class="area-card"><div class="area-name">Sabre Springs</div><div class="area-zip">92128</div><div class="area-services">Solar Panel Cleaning · Pressure Washing</div></div>
+        <div class="area-card"><div class="area-name">San Marcos</div><div class="area-zip">92078</div><div class="area-services">Solar Panel Cleaning · Pressure Washing</div></div>
+        <div class="area-card"><div class="area-name">Bonita</div><div class="area-zip">91902</div><div class="area-services">Gutter Cleaning · Pressure Washing · Solar Panel Cleaning</div></div>
+        <div class="area-card"><div class="area-name">Del Cerro</div><div class="area-zip">92120</div><div class="area-services">Pressure Washing · Gutter Cleaning · Solar Panel Cleaning</div></div>
+        <div class="area-card"><div class="area-name">San Carlos</div><div class="area-zip">92119</div><div class="area-services">Pressure Washing · Gutter Cleaning</div></div>
+        <div class="area-card"><div class="area-name">Escondido (Gated &amp; Newer Communities)</div><div class="area-zip">92029</div><div class="area-services">Solar Panel Cleaning · Pressure Washing</div></div>
+        <div class="area-card"><div class="area-name">Alpine</div><div class="area-zip">91901</div><div class="area-services">Gutter Cleaning · Pressure Washing</div></div>
+        <div class="area-card"><div class="area-name">Fallbrook (Estate Areas)</div><div class="area-zip">92028</div><div class="area-services">Gutter Cleaning · Pressure Washing · Window Cleaning</div></div>
+        <div class="area-card"><div class="area-name">Leucadia (Coastal Encinitas)</div><div class="area-zip">92024</div><div class="area-services">Window Cleaning · Pressure Washing</div></div>
+        <div class="area-card"><div class="area-name">University City</div><div class="area-zip">92122</div><div class="area-services">Solar Panel Cleaning · Window Cleaning</div></div>
+        <div class="area-card"><div class="area-name">La Mesa (Hillside Areas)</div><div class="area-zip">91941</div><div class="area-services">Pressure Washing · Gutter Cleaning</div></div>
+        <div class="area-card"><div class="area-name">Clairemont</div><div class="area-zip">92117</div><div class="area-services">Pressure Washing · Solar Panel Cleaning</div></div>
+        <div class="area-card"><div class="area-name">Tierrasanta</div><div class="area-zip">92124</div><div class="area-services">Solar Panel Cleaning · Pressure Washing</div></div>
+        <div class="area-card"><div class="area-name">Serra Mesa</div><div class="area-zip">92123</div><div class="area-services">Pressure Washing · Solar Panel Cleaning</div></div>
+        <div class="area-card"><div class="area-name">Mira Mesa</div><div class="area-zip">92126</div><div class="area-services">Solar Panel Cleaning · Pressure Washing</div></div>
+      </div>
+    </div>
+
+    <!-- SEO Footer Copy -->
+    <div class="areas-seo-footer">
+      <p>Shore Thing External Cleaning is a San Diego-based exterior cleaning company serving homeowners and businesses across San Diego County. Our services include pressure washing, soft washing, solar panel cleaning, window and screen cleaning, and gutter cleaning. We serve all of San Diego's top neighborhoods including La Jolla, Rancho Santa Fe, Coronado, Del Mar, Carmel Valley, Carlsbad, Encinitas, Scripps Ranch, 4S Ranch, and dozens more communities throughout North County, South Bay, and East County San Diego.</p>
+      <p>Licensed and insured. Locally owned and operated.</p>
+      <p class="areas-seo-keywords">San Diego pressure washing &nbsp;|&nbsp; San Diego solar panel cleaning &nbsp;|&nbsp; San Diego window cleaning &nbsp;|&nbsp; San Diego gutter cleaning &nbsp;|&nbsp; exterior cleaning San Diego &nbsp;|&nbsp; house washing San Diego &nbsp;|&nbsp; soft washing San Diego &nbsp;|&nbsp; San Diego exterior cleaning company</p>
     </div>
   </div>
 </section>
