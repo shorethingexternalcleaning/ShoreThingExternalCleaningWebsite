@@ -616,7 +616,7 @@
 
     /* ── ABOUT ── */
     .section-about {
-      padding: 104px 28px;
+      padding: 104px 28px 80px;
       background: linear-gradient(145deg, #080F18 0%, #0F1F30 50%, #080F18 100%);
       position: relative;
       overflow: hidden;
@@ -972,21 +972,19 @@
     }
 
     /* ── RATINGS & SOCIALS ── */
-    .section-social {
-      padding: 80px 28px;
-      position: relative;
-    }
-    .section-social::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, transparent, rgba(59,184,232,0.04), transparent);
-      pointer-events: none;
-    }
-    .social-inner {
+    .about-reputation {
       max-width: 860px;
-      margin: 0 auto;
+      margin: 72px auto 0;
       text-align: center;
+      position: relative;
+      z-index: 1;
+      padding: 0 28px;
+    }
+    .about-rep-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(59,184,232,0.25), transparent);
+      margin-bottom: 56px;
     }
     .ratings-row {
       display: flex;
@@ -1834,6 +1832,75 @@
       </div>
     </div>
   </div>
+
+  <!-- Reputation sub-section -->
+  <div class="about-reputation" data-reveal>
+    <div class="about-rep-divider"></div>
+    <span class="eyebrow">Our Reputation</span>
+    <h3 style="font-family:'Oswald',sans-serif;font-size:clamp(1.3rem,2.5vw,1.9rem);font-weight:700;letter-spacing:0.06em;margin:0 0 6px;">100% FIVE-STAR RATED</h3>
+    <div class="accent-bar-center"></div>
+    <p style="color:var(--muted);font-size:0.95rem;margin:16px auto 0;max-width:520px;line-height:1.65;">Every single review we've earned on Google, Facebook, and Yelp is five stars — and we plan to keep it that way.</p>
+
+    <div class="ratings-row">
+      <a href="https://www.google.com/search?q=Shore+Thing+External+Cleaning+San+Diego" target="_blank" rel="noopener noreferrer" class="rating-badge">
+        <svg class="rating-badge-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#4285F4" d="M45.5 24.5c0-1.5-.1-3-.4-4.5H24v8.5h12.1c-.5 2.8-2.1 5.1-4.4 6.7v5.5h7.1c4.2-3.9 6.7-9.6 6.7-16.2z"/>
+          <path fill="#34A853" d="M24 46c6.1 0 11.2-2 14.9-5.5l-7.1-5.5c-2 1.3-4.5 2.1-7.8 2.1-6 0-11-4-12.8-9.5H4v5.7C7.7 41.5 15.3 46 24 46z"/>
+          <path fill="#FBBC05" d="M11.2 27.6A13.6 13.6 0 0110.5 24c0-1.2.2-2.4.5-3.5V14.7H4A22 22 0 002 24c0 3.6.9 7 2.4 9.9l7.2-5.7-.4-.6z"/>
+          <path fill="#EA4335" d="M24 10.5c3.4 0 6.4 1.2 8.8 3.4l6.5-6.5C35.2 3.7 30.1 2 24 2 15.3 2 7.7 6.5 4 13.7l7.2 5.7C13 14.5 18 10.5 24 10.5z"/>
+        </svg>
+        <div class="rating-badge-text">
+          <div class="rating-badge-stars">★★★★★</div>
+          <div class="rating-badge-platform">Google Reviews</div>
+          <div class="rating-badge-sub">100% Five Stars</div>
+        </div>
+      </a>
+      <a href="https://www.facebook.com/people/Shore-Thing-External-Cleaning-SD/61587908588510/" target="_blank" rel="noopener noreferrer" class="rating-badge">
+        <svg class="rating-badge-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="24" fill="#1877F2"/>
+          <path fill="#fff" d="M32 24h-5v16h-6V24h-3v-5h3v-3c0-4 2-6 6-6h4v5h-3c-1 0-1 .5-1 1v3h4l-1 5z"/>
+        </svg>
+        <div class="rating-badge-text">
+          <div class="rating-badge-stars">★★★★★</div>
+          <div class="rating-badge-platform">Facebook</div>
+          <div class="rating-badge-sub">100% Five Stars</div>
+        </div>
+      </a>
+      <a href="https://www.yelp.com/biz/shore-thing-external-cleaning-san-diego?osq=Shore+Thing+External+Cleaning" target="_blank" rel="noopener noreferrer" class="rating-badge">
+        <svg class="rating-badge-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="24" fill="#D32323"/>
+          <text x="24" y="33" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" font-weight="900" fill="#fff">y</text>
+        </svg>
+        <div class="rating-badge-text">
+          <div class="rating-badge-stars">★★★★★</div>
+          <div class="rating-badge-platform">Yelp</div>
+          <div class="rating-badge-sub">100% Five Stars</div>
+        </div>
+      </a>
+    </div>
+
+    <span class="eyebrow" style="margin-bottom:22px;">Follow Us</span>
+    <div class="social-icons-row">
+      <a href="https://www.facebook.com/people/Shore-Thing-External-Cleaning-SD/61587908588510/" target="_blank" rel="noopener noreferrer" class="social-icon-link fb">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z"/>
+        </svg>
+        Facebook
+      </a>
+      <a href="https://www.instagram.com/shorethingexternalcleaningsd/" target="_blank" rel="noopener noreferrer" class="social-icon-link ig">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
+        Instagram
+      </a>
+      <a href="https://www.tiktok.com/@shorethingexternalsd" target="_blank" rel="noopener noreferrer" class="social-icon-link tt">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.77a4.85 4.85 0 01-1.01-.08z"/>
+        </svg>
+        TikTok
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════ CONTACT ══════════════════════════════ -->
@@ -1943,83 +2010,6 @@
           <p class="form-success-title">Message Sent!</p>
           <p class="form-success-msg">Thanks — we'll be in touch shortly with your free quote.</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════ RATINGS & SOCIALS ════════════════════ -->
-<section class="section-social">
-  <div class="social-inner">
-    <div data-reveal>
-      <span class="eyebrow">Our Reputation</span>
-      <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;letter-spacing:0.06em;margin:0 0 6px;">100% FIVE-STAR RATED</h2>
-      <div class="accent-bar-center"></div>
-      <p style="color:var(--muted);font-size:0.95rem;margin:20px auto 0;max-width:520px;line-height:1.65;">Every single review we've earned on Google, Facebook, and Yelp is five stars — and we plan to keep it that way.</p>
-    </div>
-
-    <div class="ratings-row" data-reveal>
-      <!-- Google -->
-      <a href="https://www.google.com/search?q=Shore+Thing+External+Cleaning+San+Diego" target="_blank" rel="noopener noreferrer" class="rating-badge">
-        <svg class="rating-badge-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#4285F4" d="M45.5 24.5c0-1.5-.1-3-.4-4.5H24v8.5h12.1c-.5 2.8-2.1 5.1-4.4 6.7v5.5h7.1c4.2-3.9 6.7-9.6 6.7-16.2z"/>
-          <path fill="#34A853" d="M24 46c6.1 0 11.2-2 14.9-5.5l-7.1-5.5c-2 1.3-4.5 2.1-7.8 2.1-6 0-11-4-12.8-9.5H4v5.7C7.7 41.5 15.3 46 24 46z"/>
-          <path fill="#FBBC05" d="M11.2 27.6A13.6 13.6 0 0110.5 24c0-1.2.2-2.4.5-3.5V14.7H4A22 22 0 002 24c0 3.6.9 7 2.4 9.9l7.2-5.7-.4-.6z"/>
-          <path fill="#EA4335" d="M24 10.5c3.4 0 6.4 1.2 8.8 3.4l6.5-6.5C35.2 3.7 30.1 2 24 2 15.3 2 7.7 6.5 4 13.7l7.2 5.7C13 14.5 18 10.5 24 10.5z"/>
-        </svg>
-        <div class="rating-badge-text">
-          <div class="rating-badge-stars">★★★★★</div>
-          <div class="rating-badge-platform">Google Reviews</div>
-          <div class="rating-badge-sub">100% Five Stars</div>
-        </div>
-      </a>
-      <!-- Facebook -->
-      <a href="https://www.facebook.com/people/Shore-Thing-External-Cleaning-SD/61587908588510/" target="_blank" rel="noopener noreferrer" class="rating-badge">
-        <svg class="rating-badge-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="24" cy="24" r="24" fill="#1877F2"/>
-          <path fill="#fff" d="M32 24h-5v16h-6V24h-3v-5h3v-3c0-4 2-6 6-6h4v5h-3c-1 0-1 .5-1 1v3h4l-1 5z"/>
-        </svg>
-        <div class="rating-badge-text">
-          <div class="rating-badge-stars">★★★★★</div>
-          <div class="rating-badge-platform">Facebook</div>
-          <div class="rating-badge-sub">100% Five Stars</div>
-        </div>
-      </a>
-      <!-- Yelp -->
-      <a href="https://www.yelp.com/biz/shore-thing-external-cleaning-san-diego?osq=Shore+Thing+External+Cleaning" target="_blank" rel="noopener noreferrer" class="rating-badge">
-        <svg class="rating-badge-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="24" cy="24" r="24" fill="#D32323"/>
-          <text x="24" y="33" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" font-weight="900" fill="#fff">y</text>
-        </svg>
-        <div class="rating-badge-text">
-          <div class="rating-badge-stars">★★★★★</div>
-          <div class="rating-badge-platform">Yelp</div>
-          <div class="rating-badge-sub">100% Five Stars</div>
-        </div>
-      </a>
-    </div>
-
-    <div data-reveal>
-      <span class="eyebrow" style="margin-bottom:22px;">Follow Us</span>
-      <div class="social-icons-row">
-        <a href="https://www.facebook.com/people/Shore-Thing-External-Cleaning-SD/61587908588510/" target="_blank" rel="noopener noreferrer" class="social-icon-link fb">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z"/>
-          </svg>
-          Facebook
-        </a>
-        <a href="https://www.instagram.com/shorethingexternalcleaningsd/" target="_blank" rel="noopener noreferrer" class="social-icon-link ig">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-          </svg>
-          Instagram
-        </a>
-        <a href="https://www.tiktok.com/@shorethingexternalsd" target="_blank" rel="noopener noreferrer" class="social-icon-link tt">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.77a4.85 4.85 0 01-1.01-.08z"/>
-          </svg>
-          TikTok
-        </a>
       </div>
     </div>
   </div>
